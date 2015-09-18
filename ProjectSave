@@ -5,8 +5,8 @@
     }
     //all needed variable declared here
     var randomKey = randomString(5);
-    var FirebaseParentPath = new Firebase("https://wedraw.firebaseio.com/");
-    var FirebasePathtoRealtimeDrawing = new Firebase("https://wedraw.firebaseio.com/realtime_drawing");
+    var FirebaseParentPath = new Firebase("https://bc12-drawtogether.firebaseio.com/");
+    var FirebasePathtoRealtimeDrawing = new Firebase("https://bc12-drawtogether.firebaseio.com/realtime_drawing");
     var FireBasePathtoSaved = FirebaseParentPath.child("saved");
     // call saveFromDraf function when the saved button is clicked
     $("#save").click(function(){
