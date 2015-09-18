@@ -35,7 +35,7 @@
         FireBasePathtoSaved.on("value", function(snapshot){
             valueOfSnapshot = snapshot.val();
             for(var key in valueOfSnapshot){
-                $listsave.append('<div><img src="images/layers-50.png" /> <a href="#"> id="'+key+'"><br>'+ key +'</a></div>')
+                $listsave.append('<div><img src="../dashboard/images/layers-50.png" /> <a href="#"> id="'+key+'"><br>'+ key +'</a></div>')
             }
 
         })
