@@ -57,6 +57,7 @@
             // console.log(sendsavetolive);
         });
     }
+ // function to disblae the canvas
  function disableEventListenerOnCanvas(){
      $("$canvas").unbind("mousedown","mousemove","mouseup");
  }
