@@ -74,7 +74,7 @@ var DrawTogether = function(canvas, container){
 		this.brush = false;
 		this.erase = false;
 	}
-	
+
 	this.startCircle = function(x,y){
 		this.posX = x;
 		this.posY = y;
@@ -85,7 +85,7 @@ var DrawTogether = function(canvas, container){
 		this.erase = false;
 		this.circle = true;
 	}
-	
+
 	this.startBrush = function(x,y){
 		this.posX = x;
 		this.posY = y;
@@ -96,7 +96,7 @@ var DrawTogether = function(canvas, container){
 		this.brush = true;
 		this.circle = false;
 	}
-	
+
 	this.startErase = function(x,y){
 		this.posX = x;
 		this.posY = y;
@@ -137,17 +137,17 @@ var DrawTogether = function(canvas, container){
 		var obj = {x:x, y:y, color: {stroke:tmp_ctx.strokeStyle, fill:tmp_ctx.fillStyle, size: tmp_ctx.lineWidth}, type:'ellipse'};
 		return obj;
 	}
-	
+
 	this.drawBrush = function(x,y){
 		var obj = {x:x, y:y, color: {stroke:tmp_ctx.strokeStyle, fill:tmp_ctx.fillStyle, size: tmp_ctx.lineWidth}, type:'brush'};
 		return obj;
 	}
-	
+
 	this.drawErase = function(x,y){
 		var obj = {x:x, y:y, color: {stroke:'#fff', fill:'#fff', size: tmp_ctx.lineWidth}, type:'erase'};
 		return obj;
 	}
-	
+
 	this.drawCircle = function(x,y){
 		var obj = {x:x, y:y, color: {stroke:tmp_ctx.strokeStyle, fill:tmp_ctx.fillStyle, size: tmp_ctx.lineWidth}, type:'circle'};
 		return obj;
@@ -155,7 +155,7 @@ var DrawTogether = function(canvas, container){
 
 	this.drawLineCoors = function(x,y,color){
 		//tmp_ctx.clearRect(0, 0, tmp_canvas.width, tmp_canvas.height);
-		
+
 		tmp_ctx.beginPath();
 		tmp_ctx.strokeStyle = color.stroke;
 		tmp_ctx.lineWidth = color.size;
@@ -216,7 +216,7 @@ var DrawTogether = function(canvas, container){
 		ye = y + h,           // y-end
 		xm = x + w / 2,       // x-middle
 		ym = y + h / 2;       // y-middle
-		
+
 		tmp_ctx.beginPath();
 		tmp_ctx.fillStyle = color.fill;
 		tmp_ctx.strokeStyle = color.stroke;
@@ -247,7 +247,7 @@ var DrawTogether = function(canvas, container){
 
 		this.posX = x;
 		this.posY = y;
-		
+
 		return ('Coordinates Brush ' + x + ' - ' + y);
 	}
 
@@ -269,7 +269,7 @@ var DrawTogether = function(canvas, container){
 
 		this.posX = x;
 		this.posY = y;
-		
+
 		return ('Coordinates Erase ' + x + ' - ' + y);
 	}
 
@@ -286,7 +286,7 @@ var DrawTogether = function(canvas, container){
 				break;
 			case 'erase':
 				temp = this.drawEraseCoors(x,y,color);
-				break;						
+				break;
 			default:
 				break;
 		}
@@ -336,7 +336,7 @@ var DrawTogether = function(canvas, container){
 		context.strokeStyle = value;
 		tmp_ctx.strokeStyle = value;
 	}
-	
+
 	this.setfillColor = function(value){
 		context.fillStyle = value;
 		tmp_ctx.fillStyle = value;
@@ -346,11 +346,11 @@ var DrawTogether = function(canvas, container){
 		context.lineWidth = value;
 		tmp_ctx.lineWidth = value;
 	}
-	
+
 	this.getStrokeColor = function(){
 		return context.strokeStyle;
 	}
-	
+
 	this.getfillColor = function(){
 		return context.fillStyle;
 	}
@@ -397,7 +397,7 @@ var DrawTogether = function(canvas, container){
 
 $(document).ready(function(){
 
-	var myDataRef = new Firebase('https://wedraw.firebaseio.com/realtime_drawing');
+	var myDataRef = new Firebase('https://bc12-drawtogether.firebaseio.com/realtime_drawing');
 
 	var theCanvas = document.getElementById("canvas");
 	var container = document.querySelector('#container');
@@ -432,7 +432,7 @@ $(document).ready(function(){
 			$(this).addClass('active');
 			$canvas.attr('class', 'draw');
 		});
-		
+
 		$('#brushBtn').click(function(){
 			if(theDraw.isDraw === 'erase'){ theDraw.setCurrentStyle(); }
 			theDraw.isDraw = 'brush';
@@ -440,7 +440,7 @@ $(document).ready(function(){
 			$(this).addClass('active');
 			$canvas.attr('class', 'brush');
 		});
-		
+
 		$('#eraseBtn').click(function(){
 			theDraw.getCurrentStyle();
 			theDraw.isDraw = 'erase';
@@ -465,15 +465,15 @@ $(document).ready(function(){
 			}
 
 		});
-		
+
 		$('#sizeBtn').change(function(){
 			theDraw.setStrokeSize(this.value);
 		});
-		
+
 		$('#strokeColorBtn').change(function(){
 			theDraw.setStrokeColor(this.value);
 		});
-		
+
 		$('#fillColorBtn').change(function(){
 			theDraw.setfillColor(this.value);
 		});
@@ -622,9 +622,9 @@ $(document).ready(function(){
 
 
 
-	
-	
-		
+
+
+
 });
 
 
