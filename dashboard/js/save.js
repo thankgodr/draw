@@ -1,7 +1,4 @@
 
-
-
-
 //Function to generate random string, used as key for database storage
     function randomString(length) {
         return Math.round((Math.pow(36, length + 1) - Math.random() *
@@ -32,14 +29,14 @@
             FireBasePathtoSaved.child(randomKey).set(snapshot.val());
         })
     }
- }
+ 
 //write save files when button open is clickk
     function openFromSaved(){
         var $listsave = $('#listsave');
         FireBasePathtoSaved.on("value", function(snapshot){
             valueOfSnapshot = snapshot.val();
             for(var key in valueOfSnapshot){
-                $listsave.append('<div id="openup"><img src="../images/layers-50.png" /> <a href="#"> id="'+key+'"><br>'+ key +'</a></div>')
+                $listsave.append('<div id="openup"><img src="images/Layers-50.png" /> <a href="#"> id="'+key+'"><br>'+ key +'</a></div>')
             }
 
         })
