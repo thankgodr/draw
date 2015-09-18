@@ -308,13 +308,13 @@ text-shadow: 2px 2px #333;
 }
 
 .draw {
-	cursor: url(../images/line-32.png), auto;
+	cursor: url(../images/Line-32.png), auto;
 }
 
 .brush {
-   cursor: url(../images/brush-32.png), auto;
+   cursor: url(../images/Brush-32.png), auto;
 }
 
 .erase {
-   cursor: url(../images/erase-32.png), auto;
+   cursor: url(../images/Erase-32.png), auto;
 }
